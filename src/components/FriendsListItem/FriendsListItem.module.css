@@ -3,7 +3,7 @@
   padding: 15px 15px 15px 30px;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 30px;
 
   font-size: 20px;
