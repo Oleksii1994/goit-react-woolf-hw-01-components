@@ -1,0 +1,23 @@
+.transactionsHistory {
+  padding: 15px;
+  background-color: #02091061;
+  width: 400px;
+  text-align: center;
+  color: white;
+}
+
+.tableHead {
+  background-color: #0133b447;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.tableRowItem {
+  background-color: #00658f59;
+  font-size: 20px;
+}
+
+.tableData {
+  padding: 5px 30px;
+}
