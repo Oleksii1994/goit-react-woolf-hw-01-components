@@ -1,50 +1,58 @@
 import PropTypes from 'prop-types';
-import css from './TransactionsTable.module.css';
+import {
+  TransactionsTableStyled,
+  TableHead,
+  TableHeadData,
+  TableRowItem,
+  TableData,
+} from './Transactions.styled';
+
+// import css from './TransactionsTable.module.css';
 
 export const TransactionsTable = props => {
   const { transactions } = props;
 
   return (
-    <table className={css.transactionsHistory}>
-      <thead className={css.tableHead}>
-        <tr className={css.tableRow}>
-          <th className={css.tableHead}>Type</th>
-          <th className={css.tableHead}>Amount</th>
-          <th className={css.tableHead}>Currency</th>
+    <TransactionsTableStyled>
+      <TableHead>
+        <tr>
+          <TableHeadData>Type</TableHeadData>
+          <TableHeadData>Amount</TableHeadData>
+          <TableHeadData>Currency</TableHeadData>
         </tr>
-      </thead>
+      </TableHead>
 
       <tbody>
         {transactions.map(({ type, amount, currency, id }, index) => {
-          return index % 2 === 0 ? (
-            <tr key={id} className={css.tableRowItem}>
-              <td className={css.tableData}>{type}</td>
-              <td className={css.tableData}>{amount}</td>
-              <td className={css.tableData}>{currency}</td>
-            </tr>
-          ) : (
-            <tr key={id} className={css.tableRowItemChanged}>
-              <td className={css.tableData}>{type}</td>
-              <td className={css.tableData}>{amount}</td>
-              <td className={css.tableData}>{currency}</td>
-            </tr>
-          );
-          // return (
+          // return index % 2 === 0 ? (
           //   <tr key={id} className={css.tableRowItem}>
           //     <td className={css.tableData}>{type}</td>
           //     <td className={css.tableData}>{amount}</td>
           //     <td className={css.tableData}>{currency}</td>
           //   </tr>
+          // ) : (
+          //   <tr key={id} className={css.tableRowItemChanged}>
+          //     <td className={css.tableData}>{type}</td>
+          //     <td className={css.tableData}>{amount}</td>
+          //     <td className={css.tableData}>{currency}</td>
+          //   </tr>
           // );
+          return (
+            <TableRowItem key={id}>
+              <TableData>{type}</TableData>
+              <TableData>{amount}</TableData>
+              <TableData>{currency}</TableData>
+            </TableRowItem>
+          );
         })}
       </tbody>
-    </table>
+    </TransactionsTableStyled>
   );
 };
 
 TransactionsTable.propTypes = {
   transactions: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       id: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
       amount: PropTypes.string.isRequired,

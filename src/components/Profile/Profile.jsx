@@ -1,43 +1,51 @@
 import { FaUser, FaPaperPlane, FaLocationArrow } from 'react-icons/fa';
+import {
+  ProfileBox,
+  DescriptionBox,
+  Avatar,
+  UserInfoBox,
+  Name,
+  StatsList,
+  StatsItem,
+  StatsLabel,
+} from './Profile.styled';
 import PropTypes from 'prop-types';
-
-import css from './Profile.module.css';
 
 export const Profile = props => {
   const { avatar, username, location, tag, stats } = props;
   return (
-    <div className={css.profile}>
-      <div className={css.description}>
-        <img src={avatar} alt="User avatar" className={css.avatar} />
-        <div className={css.iconTextBox}>
+    <ProfileBox>
+      <DescriptionBox>
+        <Avatar src={avatar} alt={username} />
+        <UserInfoBox>
           <FaUser size="16px" />
-          <p className={css.name}>{username}</p>
-        </div>
-        <div className={css.iconTextBox}>
+          <Name>{username}</Name>
+        </UserInfoBox>
+        <UserInfoBox>
           <FaPaperPlane size="16px" />
-          <p className={css.tag}>@{tag}</p>
-        </div>
-        <div className={css.iconTextBox}>
+          <p>@{tag}</p>
+        </UserInfoBox>
+        <UserInfoBox>
           <FaLocationArrow size="16px" />
-          <p className={css.location}>{location}</p>
-        </div>
-      </div>
+          <p>{location}</p>
+        </UserInfoBox>
+      </DescriptionBox>
 
-      <ul className={css.stats}>
-        <li className={css.statsItem}>
-          <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{stats.followers}</span>
-        </li>
-        <li className={css.statsItem}>
-          <span className={css.label}>Views</span>
-          <span className={css.quantity}>{stats.views}</span>
-        </li>
-        <li className={css.statsItem}>
-          <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+      <StatsList>
+        <StatsItem>
+          <StatsLabel>Followers</StatsLabel>
+          <span>{stats.followers}</span>
+        </StatsItem>
+        <StatsItem>
+          <StatsLabel>Views</StatsLabel>
+          <span>{stats.views}</span>
+        </StatsItem>
+        <StatsItem>
+          <StatsLabel>Likes</StatsLabel>
+          <span>{stats.likes}</span>
+        </StatsItem>
+      </StatsList>
+    </ProfileBox>
   );
 };
 
@@ -46,7 +54,7 @@ Profile.propTypes = {
   username: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
-  stats: PropTypes.shape({
+  stats: PropTypes.exact({
     followers: PropTypes.number,
     views: PropTypes.number,
     likes: PropTypes.number,

@@ -4,7 +4,7 @@ import { FriendsListItem } from 'components/FriendsListItem/FriendsListItem';
 export const FriendsList = props => {
   const { friends } = props;
   return (
-    <ul className="friend-list">
+    <ul>
       {friends.map(friend => {
         return (
           <FriendsListItem
