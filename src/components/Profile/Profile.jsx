@@ -1,4 +1,6 @@
+import { FaUser, FaPaperPlane, FaLocationArrow } from 'react-icons/fa';
 import PropTypes from 'prop-types';
+
 import css from './Profile.module.css';
 
 export const Profile = props => {
@@ -7,9 +9,18 @@ export const Profile = props => {
     <div className={css.profile}>
       <div className={css.description}>
         <img src={avatar} alt="User avatar" className={css.avatar} />
-        <p className={css.name}>{username}</p>
-        <p className={css.tag}>@{tag}</p>
-        <p className={css.location}>{location}</p>
+        <div className={css.iconTextBox}>
+          <FaUser size="16px" />
+          <p className={css.name}>{username}</p>
+        </div>
+        <div className={css.iconTextBox}>
+          <FaPaperPlane size="16px" />
+          <p className={css.tag}>@{tag}</p>
+        </div>
+        <div className={css.iconTextBox}>
+          <FaLocationArrow size="16px" />
+          <p className={css.location}>{location}</p>
+        </div>
       </div>
 
       <ul className={css.stats}>
