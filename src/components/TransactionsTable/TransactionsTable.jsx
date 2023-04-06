@@ -15,14 +15,27 @@ export const TransactionsTable = props => {
       </thead>
 
       <tbody>
-        {transactions.map(({ type, amount, currency, id }) => {
-          return (
+        {transactions.map(({ type, amount, currency, id }, index) => {
+          return index % 2 === 0 ? (
             <tr key={id} className={css.tableRowItem}>
               <td className={css.tableData}>{type}</td>
               <td className={css.tableData}>{amount}</td>
               <td className={css.tableData}>{currency}</td>
             </tr>
+          ) : (
+            <tr key={id} className={css.tableRowItemChanged}>
+              <td className={css.tableData}>{type}</td>
+              <td className={css.tableData}>{amount}</td>
+              <td className={css.tableData}>{currency}</td>
+            </tr>
           );
+          // return (
+          //   <tr key={id} className={css.tableRowItem}>
+          //     <td className={css.tableData}>{type}</td>
+          //     <td className={css.tableData}>{amount}</td>
+          //     <td className={css.tableData}>{currency}</td>
+          //   </tr>
+          // );
         })}
       </tbody>
     </table>
