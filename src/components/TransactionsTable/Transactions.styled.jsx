@@ -28,6 +28,16 @@ export const TableHead = styled.thead`
 export const TableRowItem = styled.tr`
   background-color: #00658f59;
   font-size: 20px;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+
+  &:nth-child(2n) {
+    background-color: #022a3b59;
+  }
+
+  &:hover {
+    background-color: #ff9200a3;
+  }
 `;
 
 export const TableData = styled.td`

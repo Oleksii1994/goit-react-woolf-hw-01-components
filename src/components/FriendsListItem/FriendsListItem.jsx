@@ -7,7 +7,7 @@ export const FriendsListItem = props => {
   return (
     <FriendsItem>
       <Status style={{ backgroundColor: backgroundColor }}></Status>
-      <img src={avatar} alt="User avatar" width="48" />
+      <img src={avatar} alt={name} width="48" />
       <p>{name}</p>
     </FriendsItem>
   );

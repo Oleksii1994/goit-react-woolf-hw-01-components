@@ -7,8 +7,6 @@ import {
   TableData,
 } from './Transactions.styled';
 
-// import css from './TransactionsTable.module.css';
-
 export const TransactionsTable = props => {
   const { transactions } = props;
 
@@ -24,19 +22,6 @@ export const TransactionsTable = props => {
 
       <tbody>
         {transactions.map(({ type, amount, currency, id }, index) => {
-          // return index % 2 === 0 ? (
-          //   <tr key={id} className={css.tableRowItem}>
-          //     <td className={css.tableData}>{type}</td>
-          //     <td className={css.tableData}>{amount}</td>
-          //     <td className={css.tableData}>{currency}</td>
-          //   </tr>
-          // ) : (
-          //   <tr key={id} className={css.tableRowItemChanged}>
-          //     <td className={css.tableData}>{type}</td>
-          //     <td className={css.tableData}>{amount}</td>
-          //     <td className={css.tableData}>{currency}</td>
-          //   </tr>
-          // );
           return (
             <TableRowItem key={id}>
               <TableData>{type}</TableData>

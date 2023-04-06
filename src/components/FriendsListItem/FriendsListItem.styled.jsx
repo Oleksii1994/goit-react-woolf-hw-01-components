@@ -14,8 +14,33 @@ export const FriendsItem = styled.li`
   width: 360px;
   border-radius: 50%;
 
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+
   &:not(:last-child) {
     margin-bottom: 15px;
+  }
+
+  &:hover {
+    scale: 1.2;
+  }
+
+  &:hover img {
+    transform: rotate(-10deg) scale(1.6) translateX(10px);
+  }
+
+  & img {
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  &:hover span {
+    border-radius: 50%;
+  }
+
+  & span {
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
   }
 `;
 

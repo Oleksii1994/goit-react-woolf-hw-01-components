@@ -24,6 +24,14 @@ export const StatsItem = styled.li`
   border-radius: 25%;
   width: 60px;
   background-color: #f2fffcf0;
+
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    scale: 1.15;
+    background-color: white;
+  }
 `;
 
 export const Title = styled.h2`
