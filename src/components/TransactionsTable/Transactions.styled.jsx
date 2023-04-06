@@ -31,7 +31,7 @@ export const TableRowItem = styled.tr`
   transition-duration: 250ms;
   transition-timing-function: ease-in-out;
 
-  &:nth-child(2n) {
+  &:nth-of-type(2n) {
     background-color: #022a3b59;
   }
 
