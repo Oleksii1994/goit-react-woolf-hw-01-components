@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import { FriendsItem, Status } from './FriendsListItem.styled';
 
-export const FriendsListItem = props => {
-  const { avatar, name, isOnline } = props;
+export const FriendsListItem = ({ avatar, name, isOnline }) => {
   const backgroundColor = isOnline ? 'green' : 'red';
   return (
     <FriendsItem>

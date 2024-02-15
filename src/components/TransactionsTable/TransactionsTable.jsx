@@ -7,9 +7,7 @@ import {
   TableData,
 } from './Transactions.styled';
 
-export const TransactionsTable = props => {
-  const { transactions } = props;
-
+export const TransactionsTable = ({ transactions }) => {
   return (
     <TransactionsTableStyled>
       <TableHead>

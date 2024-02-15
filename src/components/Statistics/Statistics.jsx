@@ -7,9 +7,7 @@ import {
   LabelStats,
   Percentage,
 } from './Statistics.styled';
-export const Statistics = props => {
-  const { title, stats } = props;
-
+export const Statistics = ({ title, stats }) => {
   return (
     <StatisticsSection>
       {title && <Title>{title}</Title>}

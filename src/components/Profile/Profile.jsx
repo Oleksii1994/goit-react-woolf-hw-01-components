@@ -11,8 +11,7 @@ import {
 } from './Profile.styled';
 import PropTypes from 'prop-types';
 
-export const Profile = props => {
-  const { avatar, username, location, tag, stats } = props;
+export const Profile = ({ avatar, username, location, tag, stats }) => {
   return (
     <ProfileBox>
       <DescriptionBox>

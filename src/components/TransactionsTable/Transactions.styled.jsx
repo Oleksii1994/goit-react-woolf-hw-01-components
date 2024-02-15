@@ -1,8 +1,5 @@
 import styled from '@emotion/styled';
 
-// const toggleBackgroundColor = index => {
-//   return index % 2 === 0 ? #00658f59 : #022a3b59;
-// };
 
 export const TransactionsTableStyled = styled.table`
   padding: 15px;
